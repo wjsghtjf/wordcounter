@@ -1,0 +1,44 @@
+{%if length%}
+<h1>당신이 입력한 텍스트는 {{length}}개의 단어로 구성되어있습니다.</h1>
+
+<a href="{%url 'home'%}">다시하기</a>
+<h2>입력한 텍스트</h2>
+{{full}}
+
+
+<h2>단어 카운트:</h2>
+
+
+
+{%for word, howmany in dictionary %}
+
+
+ 
+
+    <p>{{word}} :{{howmany}}                </p>
+    <!-- if (count%5==0)}
+    {endif} -->
+{%endfor%}
+
+
+{%else%}
+
+
+         <script>
+        alert("입력하신 내용이 없습니다")
+        </script>
+        <a href="{%url 'home'%}">돌아가기</a>
+
+<script>
+    function show_back() {
+        alert("빨리 다시하십시요")
+    }
+
+    
+    setTimeout(show_back, 3000);
+    
+</script>
+        
+{%endif%}
+
+
